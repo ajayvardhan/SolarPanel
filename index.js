@@ -1,4 +1,3 @@
-// var drawingManager;
 var selectedShape;
 
 function clearSelection() {
@@ -37,7 +36,7 @@ function initialize() {
     drawingMode: google.maps.drawing.OverlayType.POLYGON,
     drawingControl: true,
     drawingControlOptions: {
-      position: google.maps.ControlPosition.TOP_LEFT,
+      position: google.maps.ControlPosition.TOP_RIGHT,
       drawingModes: ['polygon']
     },
   });
@@ -56,6 +55,8 @@ function initialize() {
         setSelection(newShape);
         
       }); 
+
+      // calculate the area of the shape and display
       var area = google.maps.geometry.spherical.computeArea(newShape.getPath());
       document.getElementById("selectedArea").innerHTML = area + " m<sup>2</sup>"
       setSelection(newShape);
@@ -64,7 +65,7 @@ function initialize() {
     }
   });
 
-  // Create the search box and link it to the UI element.
+    // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
