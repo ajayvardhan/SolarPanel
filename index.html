@@ -1,17 +1,27 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Places Search Box</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="index.js"></script>
+    <meta charset="UTF-8">
+    <title>Drawing Tools</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.6&sensor=false&libraries=geometry"></script> -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCysCQdtma0GEwXsU76s2TcUArtcp7EMks&libraries=drawing,geometry,places"></script>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    
   </head>
   <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+   <input id="pac-input" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search">
+
+    <!-- <input id="pac-input" class="controls" type="text" class="form-control" placeholder="Search Box"> -->
+    <div id="panel">
+      <div>
+        <h3>Area:</h3><h6 class="font-weight-light" id="selectedArea">0 m<sup>2</sup></h6>
+        <button class="btn btn-danger" id="delete-button">Reset</button>
+      </div>
+    </div>
     <div id="map"></div>
-    <div id="draw"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCysCQdtma0GEwXsU76s2TcUArtcp7EMks&libraries=places,drawing&callback=initAutocomplete"
-         async defer></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
